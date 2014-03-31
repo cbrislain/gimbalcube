@@ -1,5 +1,6 @@
-gimbalcube - Copyright 2014 Cooper Brislain
+gimbalcube
 ==========
+2014 - Cooper Brislain
 
 This is a 3D cube using CSS3 3d-transforms and matrix rotation.
 
