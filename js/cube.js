@@ -1,3 +1,7 @@
+// cube.js
+// 2014 - Cooper Brislain
+// this is by no means polished or complete
+
 var deg_to_rad = Math.PI/180;
 var rad_to_deg = 180/Math.PI;
 
