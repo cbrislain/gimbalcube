@@ -5,6 +5,8 @@
 var deg_to_rad = Math.PI/180;
 var rad_to_deg = 180/Math.PI;
 
+var mouse_ratio = 0.7;
+
 var CSS3 = {
 	supported: false,
 	prefix: ""
@@ -92,7 +94,7 @@ jQuery(document).ready(function(){
 	jQuery(document).on('mouseup touchend',function(e){
 		jQuery('#rotator').css(CSS3.prefix+'transition', 'all 0.25s ease');
 		oTrans = jQuery('#rotator').getTransMatrix();
-		// tween to snap
+		// tween to snap 
 		jQuery(this).data('mouseIsDown',false);	
 	
 	});
@@ -109,7 +111,9 @@ jQuery(document).ready(function(){
 				var x = e.pageX - jQuery(this).data('xoffset');
 				var y = e.pageY - jQuery(this).data('yoffset');
 			}
-			jQuery('#rotator').css(CSS3.prefix+'transform',oTrans.multiply(tM(-1*x,'y')).multiply(tM(y,'x')).cssTransformString());
+			var _x = x * mouse_ratio;
+			var _y = y * mouse_ratio;
+			jQuery('#rotator').css(CSS3.prefix+'transform',oTrans.multiply(tM(-1*_x,'y')).multiply(tM(_y,'x')).cssTransformString());
 		}
 	});
 	
